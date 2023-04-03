@@ -10,14 +10,14 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('new_table_listings', function (Blueprint $table) {
+        Schema::create('listings', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->longText('description');
-            $table->string('location');
-            $table->string('country');
             $table->string('tags');
+            $table->string('title');
+            $table->string('country');
             $table->string('company');
+            $table->string('location');
+            $table->longText('description');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('new_table_listings');
+        Schema::dropIfExists('listings');
     }
 };
